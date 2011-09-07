@@ -287,6 +287,21 @@ $(document).ready(function() {
             <dd>the number of milliseconds to wait before discarding an image (thumbnail and zoom)
             due to excessive latency, network errors, 404 and so on.
             <em>Default value: 7500 (7,5s)</em></dd>
+
+            <dt>openZoom</dt>
+            <dd>boolean flag (true or false). if set to true a click on a thumbnail will open a zoom image. If set to false
+            no zoom will be open.
+            <em>Default value: true</em></dd>
+            
+            <dt>onCloseZoom</dt>
+            <dd>if defined this function is called when a zoom image has been closed. An argument
+            representing the &lt;li&gt; jQuery object containing the thumbnail is also passed to
+            the callback.</dd>
+            
+            <dt>onOpenZoom</dt>
+            <dd>if defined this function is called when a zoom image has been opened. An argument
+            representing the &lt;li&gt; jQuery object containing the thumbnail is also passed to
+            the callback.</dd>
             
             <dt id="opt-loop">loop</dt>
             <dd>boolean flag (true or false). if this option is set to false, when latest JSON
