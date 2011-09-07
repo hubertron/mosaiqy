@@ -1,3 +1,10 @@
+<?php
+    ini_set("session.gc_maxlifetime", "1200"); 
+    if (!session_id()) { session_start(); }
+    if (!isset($_SESSION['referrer']) || $_SESSION['referrer'] == '') {
+        $_SESSION['referrer'] = $_SERVER['HTTP_REFERER'];
+    }
+?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
@@ -15,6 +22,11 @@
     (function(doc) { 
     doc.className = doc.className.replace(/(^|\b)no\-js(\b|$)/, 'js');
     }(document.documentElement));
+    
+    /* don't steal my bandwidth, thank you */
+    if (top.location!= self.location) {
+	        top.location = self.location.href
+    }
     </script>
     
     <!--[if lt IE 9]>

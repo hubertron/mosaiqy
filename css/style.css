@@ -61,8 +61,8 @@ noscript {
     color           : #5D6061;
 }
 
-a           {  color       : #414141; }
-a:visited   {  color       : #666; }
+a           {  color       : #666; }
+a:visited   {  color       : #848484; }
 
 h1 a            {  color       : #fff; text-decoration: none; }
 h1 a:visited    {  color       : #fff; }
@@ -187,8 +187,18 @@ h3 {
     text-shadow     : -1px 1px 0px #fff;
 }
 
+h3 small {
+    font-family : arial;
+    font-size   : 0.45em;
+    padding-left: 0.5em;
+}
+
 header {
     margin-bottom   : 45px;
+}
+
+#authorimg {
+    display: none;
 }
 
 hgroup em {
