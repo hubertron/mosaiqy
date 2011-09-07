@@ -24,17 +24,25 @@
 
 
     <link rel="stylesheet" media="screen" href="../lib/lib-css/mosaiqy.css" />
+
 </head>
 
 <body>
+
+
 
     
     <div class="loading mosaiqy">
         <ul></ul>
     </div>
     
+ 
+   
     
-	<!-- jquery & lib-->
+    
+    <!-- Javascript is here below -->
+    
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"> </script>
     <script>!window.jQuery && document.write('<'+'script src="../lib/jquery-1.6.1.min.js"> </'+'script>'); </script>
     <script src="../lib/mosaiqy-1.0.1.min.js" id="mosaiqy_tpl">
@@ -50,14 +58,16 @@
     $(document).ready(function() {
         $('.mosaiqy').mosaiqy({
             template        : "mosaiqy_tpl",
-            rows            : 2,
-            cols            : 2,
+            rows            : 3,
+            cols            : 3,
             avoidDuplicates : true,
-            animationDelay  : 800,
+            animationDelay  : 1000,
             animationSpeed  : 1200,
             loop            : true,
             loadTimeout     : 5000,
-			data            : [
+            openZoom        : false,
+            scrollZoom      : false,
+            data            : [
                 {
                     img     : "1.jpg",
                     desc    : "Rifugio &laquo;Citt&agrave; di Fiume&raquo;"
@@ -99,12 +109,15 @@
                     img     : "10.jpg",
                     desc    : "Veduta dal rifugio &laquo;Citt&agrave; di Fiume&raquo;"
                 }
-            ]            
+            ]           
             
         });
         
     });
     </script> 
 
+        
+ 
+     
 </body>
 </html>

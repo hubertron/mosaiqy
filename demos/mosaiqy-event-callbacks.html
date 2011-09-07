@@ -24,17 +24,28 @@
 
 
     <link rel="stylesheet" media="screen" href="../lib/lib-css/mosaiqy.css" />
+
 </head>
 
 <body>
 
+
+<body>
+
+
+   <p style="text-align: center; margin: 30px 0;">
+      Open a javascript console and reload the page. Some statements will appear when you open and close a zoom image.
+   </p>   
     
-    <div class="loading mosaiqy">
-        <ul></ul>
-    </div>
+   <div class="loading mosaiqy">
+       <ul></ul>
+   </div>
+    
+ 
+    
+    <!-- Javascript is here below -->
     
     
-	<!-- jquery & lib-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"> </script>
     <script>!window.jQuery && document.write('<'+'script src="../lib/jquery-1.6.1.min.js"> </'+'script>'); </script>
     <script src="../lib/mosaiqy-1.0.1.min.js" id="mosaiqy_tpl">
@@ -51,13 +62,24 @@
         $('.mosaiqy').mosaiqy({
             template        : "mosaiqy_tpl",
             rows            : 2,
-            cols            : 2,
+            cols            : 4,
             avoidDuplicates : true,
-            animationDelay  : 800,
+            animationDelay  : 1000,
             animationSpeed  : 1200,
             loop            : true,
             loadTimeout     : 5000,
-			data            : [
+            scrollZoom      : false,
+               
+            /* you could use these events for GA tracking or something else */
+               
+            onOpenZoom      : function(thumbnail) {
+               console.log('the zoom has been opened', thumbnail)
+            },
+            onCloseZoom     : function(thumbnail) {
+               console.log('the zoom has been closed', thumbnail)
+            },
+            
+            data           : [
                 {
                     img     : "1.jpg",
                     desc    : "Rifugio &laquo;Citt&agrave; di Fiume&raquo;"
@@ -99,12 +121,13 @@
                     img     : "10.jpg",
                     desc    : "Veduta dal rifugio &laquo;Citt&agrave; di Fiume&raquo;"
                 }
-            ]            
+            ] 
             
         });
         
     });
     </script> 
 
+     
 </body>
 </html>
