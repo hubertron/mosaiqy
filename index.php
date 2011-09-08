@@ -87,7 +87,7 @@
                <li>Initial release</li>
             </ul>
             
-            <h3>Version 1.0.1 <small>release date: <date>September 9, 2011</date></small></h3>
+            <h3>Version 1.0.1 <small>release date: <date>September 8, 2011</date></small></h3>
             <ul>
                <li>Add: Zoom image is now optional. A straight link can be assigned to every thumbnail (see demo list)</li>
                <li>Add: Optional callbacks when a zoom image has been opened and/or closed (see demo list)</li>
