@@ -66,9 +66,11 @@
     
 
      <script>
-    $(document).ready(function() {
-      // var instagramAPIDataUrl = "data.json";
-        var instagramAPIDataUrl = "https://api.instagram.com/v1/locations/111319/media/recent?client_id=116e8bedd61a4582a01f99bf486ecb61&callback=?";
+    $(document).ready(grabImages);
+
+    function grabImages () {
+       var instagramAPIDataUrl = "data.json";
+      //  var instagramAPIDataUrl = "https://api.instagram.com/v1/locations/111319/media/recent?client_id=116e8bedd61a4582a01f99bf486ecb61&callback=?";
                 
         $.getJSON(instagramAPIDataUrl, function(instagramJSON) {
                 
@@ -81,9 +83,12 @@
                 loop            : true,
                 data            : instagramJSON.data
             });            
-            
-        });        
-    });
+           
+        }); 
+        setTimeout("grabImages",5000);
+    };
+     
+   
     </script>
 
 </body>
